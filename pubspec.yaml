@@ -1,0 +1,57 @@
+name: mobile_boilerplate
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+# RUN THIS TO INITIAL SETUP IN NEW PROJECT
+# dart run change_app_package_name:main com.new.package.name
+# dart run flutter_launcher_icons:generate -f <your config file name here>
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  go_router: ^14.3.0
+  http: ^0.13.3
+  http_parser: ^4.0.0
+  intl: ^0.17.0
+  shared_preferences: ^2.2.2
+  image: ^4.1.7
+  cached_network_image: ^3.3.1
+  image_picker: ^1.1.2
+  path: ^1.9.0
+  provider: ^6.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.13.1
+  change_app_package_name: ^1.4.0
+
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/Logo.png"
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
