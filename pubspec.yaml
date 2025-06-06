@@ -4,11 +4,15 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 # RUN THIS TO INITIAL SETUP IN NEW PROJECT
-# dart run change_app_package_name:main com.new.package.name
-# dart run flutter_launcher_icons:generate -f <your config file name here>
+# install fvm
+# fvm install 3.19.2
+# fvm use 3.19.2
+# fvm dart run flutter_launcher_icons:main
+# fvm dart run change_app_package_name:main com.new.package.name
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
+
 dependencies:
   flutter:
     sdk: flutter
@@ -42,7 +46,7 @@ flutter:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/images/Logo.png"
+  image_path: "assets/images/logo.png"
 
   # fonts:
   #   - family: Schyler
