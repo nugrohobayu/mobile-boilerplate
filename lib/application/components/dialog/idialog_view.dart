@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_boilerplate/application/components/image/iimage.dart';
-import 'package:mobile_boilerplate/application/constant/iconstant.dart';
+import 'package:mobile_boilerplate/application/constant/image_path.dart';
 import 'package:mobile_boilerplate/application/helper/size_config.dart';
 
 class IDialogView {
@@ -196,7 +196,7 @@ class IDialogView {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 IImage(
-                  image: '${IConstant.pathImg}Logo.png',
+                  image: ImagePath.logo,
                   width: SizeConfig.screenWidth * .16,
                 ),
                 Padding(padding: EdgeInsets.symmetric(vertical: SizeConfig.kDefaultPadding)),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile_boilerplate/application/components/image/iimage.dart';
-import 'package:mobile_boilerplate/application/constant/iconstant.dart';
+import 'package:mobile_boilerplate/application/constant/image_path.dart';
 import 'package:mobile_boilerplate/features/auth/login/views/login_view.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
     );
     return const Scaffold(
       body: Center(
-        child: IImage(image: '${IConstant.pathImg}Logo.png'),
+        child: IImage(image: ImagePath.logo),
       ),
     );
   }

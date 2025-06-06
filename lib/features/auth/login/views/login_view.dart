@@ -5,7 +5,7 @@ import 'package:mobile_boilerplate/application/components/dialog/idialog_view.da
 import 'package:mobile_boilerplate/application/components/image/iimage.dart';
 import 'package:mobile_boilerplate/application/components/text_form/itext_form.dart';
 import 'package:mobile_boilerplate/application/constant/color_palette.dart';
-import 'package:mobile_boilerplate/application/constant/iconstant.dart';
+import 'package:mobile_boilerplate/application/constant/image_path.dart';
 import 'package:mobile_boilerplate/application/helper/size_config.dart';
 import 'package:mobile_boilerplate/features/auth/login/models/request_login.dart';
 import 'package:mobile_boilerplate/features/auth/login/viewmodel/login_viewmodel.dart';
@@ -77,7 +77,7 @@ class LoginView extends StatelessWidget {
                       vertical: SizeConfig.kDefaultPadding * 5,
                     ),
                     child: IImage(
-                      image: '${IConstant.pathImg}Logo.png',
+                      image: ImagePath.logo,
                       width: SizeConfig.screenWidth * .25,
                     ),
                   ),
