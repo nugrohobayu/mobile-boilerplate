@@ -23,7 +23,7 @@ class LoginView extends StatelessWidget {
         return AlertDialog(
           elevation: 0,
           backgroundColor: Colors.white,
-          title: const Text('Tutup VMS Mobile'),
+          title: const Text('Tutup Aplikasi'),
           content: const Text('Apakah Anda yakin ingin keluar dari aplikasi?'),
           actions: [
             TextButton(
@@ -57,7 +57,7 @@ class LoginView extends StatelessWidget {
       create: (context) => LoginViewModel(),
       child: PopScope(
         canPop: false,
-        onPopInvoked: (didPop) {
+        onPopInvokedWithResult: (didPop, result) {
           _dialogConfirmExit(context);
         },
         child: Scaffold(
@@ -109,7 +109,7 @@ class LoginView extends StatelessWidget {
                         if (formKey.currentState!.validate()) {
                           RequestLogin payload = RequestLogin(username: ctrlUsername.text, password: ctrlPassword.text);
                           provider.login(context, payload).then((value) {
-                            if (value != null) {
+                            if (value != null && context.mounted) {
                               IDialogView.dialogSuccess(
                                 context,
                                 title: value.username,
