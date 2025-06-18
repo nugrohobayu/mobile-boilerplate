@@ -129,8 +129,10 @@ class BaseApi {
 
     void checkLoading() {
       if (isLoading) {
-        Navigator.pop(context);
-        isLoading = false;
+        if (context.mounted && Navigator.canPop(context)) {
+          Navigator.pop(context);
+          isLoading = false;
+        }
       }
     }
 
@@ -250,13 +252,6 @@ class BaseApi {
         _showShackBarError(context, e.toString());
       }
     } finally {
-      // if (!error_ && loading) {
-      //   if (context.mounted) {
-      //     if (Navigator.canPop(navigatorKey.currentState!.context)) {
-      //       Navigator.pop(navigatorKey.currentState!.context);
-      //     }
-      //   }
-      // }
       if (!error_ && loading) {
         if (context.mounted && Navigator.canPop(context)) {
           Navigator.pop(context);
@@ -327,7 +322,7 @@ class BaseApi {
                       ),
                     ),
                   ),
-                  const Icon(Icons.close, color: ColorPalette.primary),
+                  const Icon(Icons.close, size: 12, color: ColorPalette.primary),
                 ],
               ),
             ),
