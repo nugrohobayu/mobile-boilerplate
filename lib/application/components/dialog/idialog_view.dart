@@ -1,9 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mobile_boilerplate/application/components/image/iimage.dart';
+import 'package:mobile_boilerplate/application/constant/color_palette.dart';
 import 'package:mobile_boilerplate/application/constant/image_path.dart';
 import 'package:mobile_boilerplate/application/helper/size_config.dart';
 
 class IDialogView {
+  static Future dialogConfirmExit(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          title: const Text('Tutup Aplikasi'),
+          content: const Text('Apakah Anda yakin ingin keluar dari aplikasi?'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text(
+                'Batal',
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                SystemNavigator.pop();
+              },
+              child: const Text(
+                'Keluar',
+                style: TextStyle(color: ColorPalette.primary),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   static Future dialogError(
     BuildContext context, {
     required String title,
@@ -150,9 +184,9 @@ class IDialogView {
                 Padding(padding: EdgeInsets.symmetric(vertical: SizeConfig.kDefaultPadding * 2)),
                 if (desc.isNotEmpty)
                   TextButton(
-                    onPressed: onPressedOk ?? () {},
+                    onPressed: onPressedOk ?? () => Navigator.pop(context),
                     child: const Text(
-                      'Kembali ke Beranda',
+                      'OK',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
