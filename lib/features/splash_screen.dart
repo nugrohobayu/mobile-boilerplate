@@ -14,7 +14,9 @@ class SplashScreen extends StatelessWidget {
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        context.push(LoginView.routeName);
+        if (context.mounted) {
+          context.push(LoginView.routeName);
+        }
       },
     );
     return const Scaffold(
